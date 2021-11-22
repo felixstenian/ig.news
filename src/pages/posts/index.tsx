@@ -1,5 +1,7 @@
-
+import { GetStaticProps } from 'next';
 import Head from 'next/head';
+import { getPrismicClient } from '../../services/prismic';
+import Prismic from '@prismicio/client'
 import { Main, PostList } from './styles';
 
 const Posts = () => {
@@ -30,6 +32,25 @@ const Posts = () => {
       </Main>
     </>
   );
+}
+
+// Gerando página de forma statica
+export const getStaticProps: GetStaticProps = async () => {
+  const prismic = getPrismicClient()
+
+  const response = await prismic.query([
+    Prismic.predicates.at('document.type', 'publication')
+  ], {
+    fetch: ['publication.title', 'publication.content'],
+    pageSize: 100,
+  })
+  console.log('posts')
+  console.log(response)
+  return {
+    props: {
+
+    }
+  }
 }
 
 export default Posts;
