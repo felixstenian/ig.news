@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import SignInButton from '../SignInButton'
 import { Container } from './styles'
 
@@ -7,8 +8,12 @@ export function Header() {
             <div>
                 <img src="/images/logo.svg" alt="ig.news" />
                 <nav>
-                    <a className='active' href="http://">Home</a>
-                    <a href="http://">Posts</a>
+                    <Link href='/'>
+                        <a className='active' >Home</a>
+                    </Link>
+                    <Link href='/posts' prefetch>
+                        <a>Posts</a>
+                    </Link>
                 </nav>
 
                 <SignInButton />
