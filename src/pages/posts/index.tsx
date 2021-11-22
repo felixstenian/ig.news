@@ -17,7 +17,6 @@ interface PostsProps {
 }
 
 const Posts = ({ posts }: PostsProps) => {
-  console.log({ posts })
   return (
     <>
       <Head>
