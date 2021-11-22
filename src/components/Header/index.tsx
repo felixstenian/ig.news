@@ -1,4 +1,4 @@
-import Link from 'next/link'
+import ActiveLink from '../ActiveLink'
 import SignInButton from '../SignInButton'
 import { Container } from './styles'
 
@@ -8,12 +8,12 @@ export function Header() {
             <div>
                 <img src="/images/logo.svg" alt="ig.news" />
                 <nav>
-                    <Link href='/'>
-                        <a className='active' >Home</a>
-                    </Link>
-                    <Link href='/posts' prefetch>
+                    <ActiveLink activeClassName='active' href='/'>
+                        <a>Home</a>
+                    </ActiveLink>
+                    <ActiveLink activeClassName='active' href='/posts' prefetch>
                         <a>Posts</a>
-                    </Link>
+                    </ActiveLink>
                 </nav>
 
                 <SignInButton />
