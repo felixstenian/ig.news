@@ -6,7 +6,7 @@ export function Header() {
     return (
         <Container>
             <div>
-                <img src="/images/logo.svg" alt="ig.news" />
+                <img src='/images/logo.svg' alt='ig.news' />
                 <nav>
                     <ActiveLink activeClassName='active' href='/'>
                         <a>Home</a>
