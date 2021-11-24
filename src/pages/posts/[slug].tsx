@@ -17,7 +17,6 @@ interface PostProps {
 }
 
 const Post = ({ post }: PostProps) => {
-  console.log(post.content)
   return (
     <>
       <Head>
@@ -39,7 +38,15 @@ export const getServerSideProps: GetServerSideProps = async ({ req, params }) =>
   const session = await getSession({ req })
   const { slug } = params
 
-  // if (!session) {}
+  // Redirecionando usuário caso não tenha assinatura ativa
+  if (!session.activeSubscription) {
+    return {
+      redirect: {
+        destination: '/',
+        permanent: false
+      }
+    }
+  }
 
   const prismic = getPrismicClient(req)
 
