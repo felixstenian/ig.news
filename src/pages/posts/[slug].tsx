@@ -39,7 +39,7 @@ export const getServerSideProps: GetServerSideProps = async ({ req, params }) =>
   const { slug } = params
 
   // Redirecionando usuário caso não tenha assinatura ativa
-  if (!session.activeSubscription) {
+  if (!session?.activeSubscription) {
     return {
       redirect: {
         destination: '/',

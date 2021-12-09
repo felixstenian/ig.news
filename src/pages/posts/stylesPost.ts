@@ -44,4 +44,31 @@ export const ContentPost = styled.div`
       margin: 0.5rem 0;
     }
   }
+
+`
+
+export const PreviewContentPost = styled(ContentPost)`
+  background: linear-gradient(var(--gray-100), transparent);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+`
+
+export const ContinueReading = styled.div`
+  padding: 2rem;
+  text-align: center;
+  background: var(--gray-850);
+  border-radius: 100px;
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin: 4rem 0 2rem;
+
+  a {
+    color: var(--yellow-500);
+    margin-left: 0.5rem;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
 `
